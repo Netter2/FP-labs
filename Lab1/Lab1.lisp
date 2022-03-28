@@ -1,0 +1,12 @@
+(defun mcos (a b c)
+  (/ (- (* a a) (* b b) (* c c)) (* -2 b c))
+)
+
+(defun main (a b c)
+  (let ((x (mcos a b c)) (y (mcos b a c)) (z (mcos c b a)))
+    (and (> (+ a b) c)
+         (> (+ b c) a)
+         (> (+ a c) b)
+         (or (< x 0) (< y 0) (< z 0)))
+  )
+)
